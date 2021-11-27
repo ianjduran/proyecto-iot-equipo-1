@@ -15,7 +15,10 @@ Dispensador de comida para mascotas programado en una NodeMCU(ESP-8266) que cuen
 - postman
 
 ## Integrantes del equipo
+Ian Javier Duran Román - A00829799
+
 Ángela Felicia Guajardo Olveda - A00829821
-Fernando José Cabrera Blanco - A00831380
-Ian Javier Duran Román - A00829799 
+
+Fernando José Cabrera Blanco - A00831380 
+
 Eunice Santos Galindo - A00831991
