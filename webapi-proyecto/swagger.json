@@ -1,0 +1,72 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Web API Express",
+        "description": "My WebApi using Node",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "LogIntento",
+            "description": "API de IoT"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/experimentos_web_api/{mascotaID}/{puedeAlimentar}": {
+            "post": {
+                "tags": [
+                    "logIntento"
+                ],
+                "summary": "Registra la la peticion de comida de una mascota",
+                "description": "Agrega un registro de intento de peticion de comida",
+                "operationId": "logIntento",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                          "name": "mascotaID",
+                          "description": "NUID del collar de la mascota",
+                          "required": true,
+                          "type": "string"
+                      },
+                      {
+                          "in": "path",
+                          "name": "puedeAlimentar",
+                          "description": "Estado que indica si se pudo alimentar a la mascota o no",
+                          "required": true,
+                          "type": "integer",
+                          "format": "int64"
+                      }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa"
+                    },
+                    "500": {
+                        "description": "Datos inválidos"
+                    }
+                }
+            }
+        }
+    }
+}
