@@ -3,6 +3,7 @@ const mysql = require('../database/db')
 class MainController {
 
     async logIntento(req , res){
+        console.log("Hola Crayola")
         console.log(req.params.mascotaID)
         console.log(req.params.puedeAlimentar)
         if(req.params.mascotaID != null && req.params.puedeAlimentar != null) {
@@ -27,6 +28,25 @@ class MainController {
             })
         } else {
           res.send('Por favor llena todos los datos!')
+        }
+    }
+    async getInfo(req,res){
+        console.log("Get Request Made")
+        console.log(req.params.mascotaID)
+        if(req.params.mascotaID!=null){
+            let mascotaID = decodeURI(req.params.mascotaID);
+            var sql = `SELECT * FROM mascota where idMascota='${mascotaID}'`
+            mysql.query(sql, (error, data, fields) => {
+                if(error) {
+                    res.status(500)
+                    res.send(error.message)
+                } else {
+                    console.log(data)
+                    res.json({
+                        data
+                    })
+                }
+            })
         }
     }
 }
